@@ -31,6 +31,7 @@ public class Main {
             HttpClient client = HttpClientBuilder.create().build();
             put(client, auth);
 //            putWithIndexAndShreddingEnabled(client, auth); //Set Index and Shredding to TRUE
+//            putUsingChunks(client, auth); //Put a file with chunked file transfer
 //            post(client, auth); //Set Hold to true
 //            get(client, auth);  //Download file
 //            getDirList(client, auth); //List a directory
@@ -38,6 +39,7 @@ public class Main {
 //            head(client, auth); //Execute a HEAD operation
 //            addMetaData(client, auth); // Add my-annotation
 //            getMetaData(client, auth); //Get my-annotation
+//            deleteMetaData(client, auth); //Delete object metadata
 //            delete(client, auth); //Delete object -> will not work if HOLD was set to true (forbidden)
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,7 +49,7 @@ public class Main {
 
     public static void getStats(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url =  "http://example-namespace.example-tenant.hcp1.hcpdemo.com/vproc/statistics";
+        String url =  "http://example-namespace.example-tenant.hcp1.hcpdemo.com/proc/statistics";
 
         //create a new HttpClient object and a GET request object
         HttpGet request = new HttpGet(url);
@@ -80,7 +82,7 @@ public class Main {
     public static void getDirList(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
         String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/?" + 
-        	"type=directory&deleted=true";
+        	"deleted=true";
 
         HttpGet request = new HttpGet(url);
 
@@ -124,6 +126,7 @@ public class Main {
         System.out.println("Response Code : "
                 + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
 
+        /*  Entity Content is not currently being returned as it should in this example.  
         //get response content
         BufferedReader rd = new BufferedReader(
                 new InputStreamReader(response.getEntity().getContent()));
@@ -135,6 +138,7 @@ public class Main {
             result.append(line);
         }
         System.out.println(result.toString());
+        */
     }
 
     public static void get(HttpClient client, String auth) throws IOException {
