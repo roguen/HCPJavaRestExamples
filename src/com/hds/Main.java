@@ -47,7 +47,7 @@ public class Main {
 
     public static void getStats(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url =  "http://example-namespace.example-tenant.cluster59h-vm3.lab.archias.com/vproc/statistics";
+        String url =  "http://example-namespace.example-tenant.hcp1.hcpdemo.com/vproc/statistics";
 
         //create a new HttpClient object and a GET request object
         HttpGet request = new HttpGet(url);
@@ -79,7 +79,7 @@ public class Main {
 
     public static void getDirList(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         HttpGet request = new HttpGet(url);
 
@@ -109,7 +109,7 @@ public class Main {
 
     public static void head(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         HttpHead request = new HttpHead(url);
 
@@ -138,7 +138,7 @@ public class Main {
 
     public static void get(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         HttpGet request = new HttpGet(url);
 
@@ -177,10 +177,10 @@ public class Main {
 
     public static void putUsingChunks(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/japark/Development/Java/HCPJavaRestSamples/world.txt";
+        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
 
         HttpPut request = new HttpPut(url);
 
@@ -207,10 +207,10 @@ public class Main {
 
     public static void put(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/japark/Development/Java/HCPJavaRestSamples/world.txt";
+        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
 
         HttpPut request = new HttpPut(url);
 
@@ -241,11 +241,11 @@ public class Main {
 
     public static void putWithIndexAndShreddingEnabled(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt" +
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt" +
                               "?index=true&shred=true";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/japark/Development/Java/HCPJavaRestSamples/world.txt";
+        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
 
         HttpPut request = new HttpPut(url);
 
@@ -273,7 +273,7 @@ public class Main {
 
     public static void post(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         HttpPost request = new HttpPost(url);
 
@@ -296,7 +296,7 @@ public class Main {
 
     public static void delete(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt?" +
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?" +
                 "privileged=true&reason=Because%20I%20Said%20So";
 
         HttpDelete request = new HttpDelete(url);
@@ -314,11 +314,11 @@ public class Main {
 
     public static void addMetaData(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt?" +
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?" +
                         "type=custom-metadata&annotation=myannotation";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/japark/Development/Java/HCPJavaRestSamples/myannotation.xml";
+        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/myannotation.xml";
 
         HttpPut request = new HttpPut(url);
 
@@ -343,7 +343,7 @@ public class Main {
 
     public static void getMetaData(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt?" +
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?" +
                               "type=custom-metadata&annotation=myannotation";
 
         HttpGet request = new HttpGet(url);
@@ -373,7 +373,7 @@ public class Main {
 
     public static void deleteMetaData(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.cluster59h-vm3.lab.archivas.com/rest/examples/world.txt?" +
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?" +
                                "type=custom-metadata&annotation=myannotation";
         HttpDelete request = new HttpDelete(url);
 
