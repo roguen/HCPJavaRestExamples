@@ -218,10 +218,12 @@ public class Main {
 
         //add authorization header for user(base64) "exampleuser" with password(md5) "passw0rd"
         request.addHeader(HCPAuthHeaderKey, auth);
-//
-//        UNCOMMENT TO USE CONDITIONAL PUT
-//        request.addHeader("If-None-Match", "86d434bcb3a1af9b0b764fc7dd4dd31a");
-//        request.addHeader("Expect", "100-CONTINUE");
+
+        //UNCOMMENT TO USE CONDITIONAL PUT
+        //request.addHeader("If-None-Match", "86d434bcb3a1af9b0b764fc7dd4dd31a");
+        request.addHeader("If-Match", "f363f9556891bd306aedd590b4d23a1e");
+        //request.addHeader("Expect", "100-CONTINUE");
+        
 
         //setup byte array for file to upload(PUT)
         File input = new File(localFilePath);
