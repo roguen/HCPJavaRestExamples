@@ -79,7 +79,8 @@ public class Main {
 
     public static void getDirList(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/?" + 
+        	"type=directory&deleted=true";
 
         HttpGet request = new HttpGet(url);
 
@@ -144,7 +145,8 @@ public class Main {
 
         //add authorization header for user(base64) "exampleuser" with password(md5) "passw0rd"
         request.addHeader(HCPAuthHeaderKey, auth);
-        request.addHeader("Range", "bytes=0-0");
+        //uncomment the following to do a partial content transfer
+        //request.addHeader("Range", "bytes=0-0");
 
         //execute the request
         HttpResponse response = client.execute(request);
@@ -165,6 +167,7 @@ public class Main {
         }
         System.out.println(result.toString());
     }
+//		  uncomment below section and replace the print to console to download the file to the local file system
 //
 //        BufferedInputStream bis = new BufferedInputStream(entity.getContent());
 //        String filePath = /tmp/outfile.txt""
@@ -221,7 +224,7 @@ public class Main {
 
         //UNCOMMENT TO USE CONDITIONAL PUT
         //request.addHeader("If-None-Match", "86d434bcb3a1af9b0b764fc7dd4dd31a");
-        request.addHeader("If-Match", "f363f9556891bd306aedd590b4d23a1e");
+        //request.addHeader("If-Match", "f363f9556891bd306aedd590b4d23a1e");
         //request.addHeader("Expect", "100-CONTINUE");
         
 
