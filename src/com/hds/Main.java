@@ -180,7 +180,7 @@ public class Main {
         String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
+        String localFilePath = "C:/Users/Administrator/git/HCPJavaRestExamples/world.txt";
 
         HttpPut request = new HttpPut(url);
 
@@ -210,7 +210,9 @@ public class Main {
         String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
+        String localFilePath = "C:/Users/Administrator/git/HCPJavaRestExamples/world.txt";
+        
+        System.out.println("Curl Statement Output: curl -iT " + localFilePath + " -H \"" + auth + "\" " + url);
 
         HttpPut request = new HttpPut(url);
 
@@ -245,7 +247,7 @@ public class Main {
                               "?index=true&shred=true";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/world.txt";
+        String localFilePath = "C:/Users/Administrator/git/HCPJavaRestExamples/world.txt";
 
         HttpPut request = new HttpPut(url);
 
@@ -318,7 +320,7 @@ public class Main {
                         "type=custom-metadata&annotation=myannotation";
 
         //specify path to file you want to upload(PUT)
-        String localFilePath = "/Users/Administrator/git/HCPJavaRestSamples/myannotation.xml";
+        String localFilePath = "C:/Users/Administrator/git/HCPJavaRestExamples/myannotation.xml";
 
         HttpPut request = new HttpPut(url);
 
