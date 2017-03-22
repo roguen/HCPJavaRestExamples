@@ -212,7 +212,7 @@ public class Main {
         //specify path to file you want to upload(PUT)
         String localFilePath = "C:/Users/Administrator/git/HCPJavaRestExamples/world.txt";
         
-        System.out.println("Curl Statement Output: curl -iT " + localFilePath + " -H \"" + auth + "\" " + url);
+        System.out.println("Curl Statement Output: curl -iT " + localFilePath + " -H \"Authorization" + auth + "\" " + url);
 
         HttpPut request = new HttpPut(url);
 
