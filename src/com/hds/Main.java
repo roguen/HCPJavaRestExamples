@@ -307,8 +307,8 @@ public class Main {
 
     public static void delete(HttpClient client, String auth) throws IOException{
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
-        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?" +
-                "privileged=true&reason=Because%20I%20Said%20So";
+        String url = "http://example-namespace.example-tenant.hcp1.hcpdemo.com/rest/examples/world.txt?";// +
+               // "privileged=true&reason=Because%20I%20Said%20So";
 
         HttpDelete request = new HttpDelete(url);
 
