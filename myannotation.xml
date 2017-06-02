@@ -1,6 +1,6 @@
-<?xml version=”1.0”?>
+<?xml version="1.0"?>
 <world-params>
-  <cruelness unit=”skovels”>6371</cruelness>
+  <cruelness unit="skovels">6371</cruelness>
   <favorite-color>
     <blue/>
     <yellow/>
